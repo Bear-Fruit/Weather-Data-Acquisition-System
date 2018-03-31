@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1= title
+  
+  ul
+  each Humidity in humidity_list
+    li  #{Humidity.sensor_reading} |  (#{Humidity.time_stamp})
+
+  else
+    li There are no humidity readings.

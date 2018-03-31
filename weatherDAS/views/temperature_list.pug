@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1= title
+  
+  ul
+  each Temperature in temperature_list
+    li #{Temperature.sensor_reading} 
+      |  (#{Temperature.time_stamp})
+
+  else
+    li There are no temperature readings.

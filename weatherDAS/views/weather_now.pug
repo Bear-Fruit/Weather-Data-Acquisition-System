@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  
+  h1 Weather Now
+  
+  h4 Time: !{data.temperature_update.time_stamp_formatted} 
+    || Temperature:  !{data.temperature_update.sensor_reading} 
+    || Humidity: !{data.humidity_update.sensor_reading} 
+    || Light: !{data.light_update.sensor_reading} 
+    || Pressure: !{data.pressure_update.sensor_reading} 

@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  h1= title
+  
+  ul
+  each Pressure in pressure_list
+    li  #{Pressure.sensor_reading}    |  (#{Pressure.time_stamp})
+
+  else
+    li There are no pressure readings.
