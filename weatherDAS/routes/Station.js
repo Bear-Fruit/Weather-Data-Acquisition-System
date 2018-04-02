@@ -35,6 +35,8 @@ router.get('/pressure', pressure_controller.pressure_list);
 router.get('/temperature', temperature_controller.temperature_list);
 
 router.get('/update', update_controller.update_new);
+router.get('/update_data', update_controller.update_news);
+
 
 module.exports = router;
 
