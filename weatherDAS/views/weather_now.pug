@@ -9,3 +9,11 @@ block content
     || Humidity: !{data.humidity_update.sensor_reading} 
     || Light: !{data.light_update.sensor_reading} 
     || Pressure: !{data.pressure_update.sensor_reading} 
+
+  
+  p #{new Date()}
+  div#data
+  script(type='text/javascript').
+    $(document).ready(function(){
+    setInterval (function(){$("#data").load('update')}, 1000 );
+    });

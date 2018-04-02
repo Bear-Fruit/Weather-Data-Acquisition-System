@@ -80,19 +80,22 @@ function temperatureCreate(sensor_reading, time_stamp) {
 
 // CREATING INSTANCES HERE BECAUSE /randomNumGen.js IS UNABLE TO CALL 
 // FUNCTIONS FROM THIS FILE
-var date = new Date(); 
-console.log('Updating.........');
-//setInterval(function (){console.log("one")},30000);
+//var date = new Date(); 
+//console.log('Updating.........');
 
-let update = new Promise(function (res,rej){
+
+//update run upon execution of randomNumGen.js
+/*let update = new Promise(function (res,rej){
  
 async.series(
 temperatureCreate(Math.floor(Math.random() * 20), date),
 pressureCreate(Math.floor(Math.random() * 20),date),
 lightCreate(Math.floor(Math.random() * 20),date),
 humidityCreate(Math.floor(Math.random() * 20),date),
-)});
-setInterval(function (res,rej){
+)});*/
+
+//update run upon execution of this script
+/*setInterval(function (res,rej){
  
 async.series(
 temperatureCreate(Math.floor(Math.random() * 20), date),
@@ -100,9 +103,16 @@ pressureCreate(Math.floor(Math.random() * 20),date),
 lightCreate(Math.floor(Math.random() * 20),date),
 humidityCreate(Math.floor(Math.random() * 20),date),
 )},30000);
+*/
+
 //update.then(function(res,rej){
 //  mongoose.connection.close();
 //  console.log('update complete');})
     // All done, disconnect from database
    // mongoose.connection.close();
+
+module.exports.humidityCreate = humidityCreate;
+module.exports.lightCreate = lightCreate;
+module.exports.temperatureCreate = temperatureCreate;
+module.exports.pressureCreate = pressureCreate;
 
