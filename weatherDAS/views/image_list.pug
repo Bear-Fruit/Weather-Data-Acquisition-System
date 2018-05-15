@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1= title
+  
+  ul
+  each Image in image_list
+    li  #{Image.sensor_reading} |  (#{Image.time_stamp})
+    img(alt='Try 5 completely breaks the page', src='data:img/png;base64,' + Image.sensor_reading, width ='25%', height='25%')
+
+  else
+    li There are no pictures of the sky.

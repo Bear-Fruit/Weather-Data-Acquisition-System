@@ -1,3 +1,5 @@
+
+var compression = require('compression');
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -12,7 +14,8 @@ var app = express();
 
 //Set up mongoose connection
 var mongoose = require('mongoose');
-var mongoDB = 'mongodb://user_name:zhilja0@ds121289.mlab.com:21289/weather_station';
+//var mongoDB = 'mongodb://user_name:zhilja0@ds121289.mlab.com:21289/weather_station';
+var mongoDB = process.env.MONGODB_URI || 'mongodb://user_name:zhilja0@ds121289.mlab.com:21289/weather_station';
 mongoose.connect(mongoDB);
 mongoose.Promise = global.Promise;
 var db = mongoose.connection;
@@ -28,6 +31,10 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(compression()); //Compress all routes
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);

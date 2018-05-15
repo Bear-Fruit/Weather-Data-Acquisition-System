@@ -15,7 +15,7 @@ setInterval(function (res,rej){
     db.humidityCreate(Math.floor(Math.random() * 20),date),
     
 )
-},20000);
+},10000);
 
 
 

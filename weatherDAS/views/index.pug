@@ -2,7 +2,7 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #[em Automatic Weather Station], the web app for The Design and Construction of a Weather Station Datat Acquisition System.
+  p Welcome to #[em Automatic Weather Station], the web app for The Design and Construction of a Weather Station Data Acquisition System.
 
   h1 Dynamic content
 
@@ -16,7 +16,9 @@ block content
       li #[strong Light:] !{data.light_count}
       li #[strong Pressure:] !{data.pressure_count} 
       li #[strong Temperature:] !{data.temperature_count}
+      li #[strong Images:] !{data.image_count}
       
   h1 Weather NOW
-  h3 Time:  !{data.time} | Light: !{data.light_new}  | Humidity: !{data.humidity_new}  | Pressure:  !{data.pressure_new}   | Temperature:  !{data.temperature_new}
+  h3 Time:  !{data.time} | Light: !{data.light_new}  | Humidity: !{data.humidity_new}  | Pressure:  !{data.pressure_new}   | Temperature:  !{data.temperature_new} | picture:  !{data.image_new}
+  
     block Now

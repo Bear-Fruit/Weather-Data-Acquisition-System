@@ -6,6 +6,7 @@ var humidity_controller = require('../controllers/humidityController');
 var light_controller = require('../controllers/lightController');
 var pressure_controller = require('../controllers/pressureController');
 var temperature_controller = require('../controllers/temperatureController');
+var image_controller = require('../controllers/imageController');
 var update_controller = require('../controllers/updateController');
 
 
@@ -33,6 +34,7 @@ router.get('/pressure', pressure_controller.pressure_list);
 //router.get('/temperature/:id', temperature_controller.temperature_detail);
 // GET request for list of all Authors.
 router.get('/temperature', temperature_controller.temperature_list);
+router.get('/image', image_controller.image_list);
 
 router.get('/update', update_controller.update_new);
 router.get('/update_data', update_controller.update_news);

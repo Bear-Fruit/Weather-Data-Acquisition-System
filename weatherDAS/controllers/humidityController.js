@@ -2,6 +2,7 @@ var Temperature = require('../models/Temperature');
 var Humidity = require('../models/Humidity');
 var Light = require('../models/Light');
 var Pressure = require('../models/Pressure');
+var Image = require('../models/Image');
 
 var async = require('async');
 
@@ -20,6 +21,9 @@ exports.index = function(req, res) {
         pressure_count: function(callback) {
             Pressure.count(callback);
         },
+        image_count: function(callback) {
+            Image.count(callback);
+        },
         time: function(callback) {  //should be changed to give time_stamp of lastest readings
             Pressure.count(callback);
         },
@@ -34,6 +38,9 @@ exports.index = function(req, res) {
         },
         pressure_new: function(callback) {//should be changed to give latest pressure reading
             Pressure.count(callback);
+        },
+        image_new: function(callback) {//should be changed to give latest pressure reading
+            Image.count(callback);
         },
         
     }, function(err, results) {

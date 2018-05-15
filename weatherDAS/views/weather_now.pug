@@ -1,11 +1,27 @@
 extends layout
 
 block content
-  
   h1 Weather Now
-  
+
   div#data
   script(type='text/javascript').
     $(document).ready(function(){
     setInterval (function(){$("#data").load('update_data')}, 1000 );
     });
+
+  table
+   thead
+    tr(style = "background-color: #f9fafc;border-bottom : 1px solid black;")
+     th(style = "padding-right:30px;", ) Temperature  
+     th(style = "padding-right:30px;", border-bottom = "5px;") Humidity    
+     th(style = "padding-right:30px;",border-bottom = "5px;") Altitude    
+     th(style = "padding-right:30px;",border-bottom = "5px;") Pressure    
+   tbody
+    tr(style = "padding:30px;") 
+     td(style = "padding:30px;") +/- 5%
+     td(style = "padding:30px;") +/- 5%
+     td(style = "padding:30px;") +/- 5%
+     td(style = "padding:30px;") +/- 5%
+      
+    
+    
